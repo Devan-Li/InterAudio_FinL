@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- ****** STYLESHEET ****** -->
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- ****** JS ****** -->
+    <script src="/script.js"></script>
+
+    <title>Music Player</title>
 </head>
+
 <body>
+    <div class="main">
+        <div class="logo">logo</div>
+
+
+        <div class="left-section">
+
+
+            <img id="sliceImage">
+            <div class="volume">
+                <div class="volumeControl">
+                    <i class="fa fa-volume-up volume-icon" aria-hidden="true" onclick="mute_sound()"></i>
+                    <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right-section">
     
+            <p class="songName">song name</p>
+            <p class="singer">singer</p>
+        </div>
+
+        <div class="mainPlayButton">
+            <button onclick="backward()" id="pre"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+            <button onclick="play()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+            <button onclick="forward()" id="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="duration">
+            <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="durationChange()">
+        </div>
+        <button id="auto" onclick="autoPlay()">Auto play <i class="fa fa-circle-o-notch"
+                aria-hidden="true"></i></button>
+
+    </div>
+
 </body>
+
 </html>
