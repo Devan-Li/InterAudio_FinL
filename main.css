@@ -15,15 +15,19 @@ body {
 }
 .main {
 	position: relative;
-	display: flex;
-	align-items: center;
-    justify-content: center;
     background-color: rgb(19, 18, 18);
     height: 90%;
     width: 90%;
     background-image: url();
+    display: flex;
+	align-items: center;
+    justify-content: center;
+    
 }
 .musicContainer {
+    display: flex;
+	align-items: center;
+    justify-content: center;
     width: 80%;
     height: 500px;
     background-color: rgb(238, 102, 4);
@@ -38,4 +42,50 @@ body {
 	justify-content: center;
 	flex-direction: column;
 }
+/* ********************** FUNTION ********************** */
+input[type="range"] {
+	-webkit-appearance: none;
+	width: 70%;
+	outline: none;
+    height: 4px;
+    border-radius: 10px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 15px;
+	height: 15px;
+    border-radius: 50%;
+    background: #4b4a4a;
+}
+/* ********************** LEFT SECTION ********************** */
+.logo {
+    position: absolute;
+	top: 30px;
+	left: 30px;
+    font-size: 60px;
+    color: blanchedalmond;
+}
+.left-section img {
+	height: 250px;
+	width: 70%;
+	border-radius: 15px;
+	box-shadow: 10px 13px 0px 4px; color: rgb(248, 231, 182);
+}
 
+.left-section .volume {
+    padding-top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+.volume i {
+	cursor: pointer;
+    padding: 10px 10px;
+
+}
+.volume .volumeControl {
+	margin-right: 10px;
+    background: rgba(248, 231, 182,0.1);
+    padding: 10px 10px;
+}

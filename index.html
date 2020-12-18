@@ -15,45 +15,48 @@
 </head>
 
 <body>
-    
+
     <!-- (((((( main )))))) -->
     <div class="main">
-        <!-- logo -->
-        <div class="logo">logo</div>
+        <!-- container -->
+        <div class="musicContainer">
+            <!-- logo -->
+            <div class="logo"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
 
-        <!-- (((((( left-section )))))) -->
-        <div class="left-section">
-            <!-- image slice-show -->
-            <img id="sliceImage">
-            <!-- volume -->
-            <div class="volume">
-                <div class="volumeControl">
-                    <i class="fa fa-volume-up volume-icon" aria-hidden="true" onclick="mute_sound()"></i>
-                    <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">
-                </div>
+            <!-- (((((( left-section )))))) -->
+            <div class="left-section">
+                <!-- image slice-show -->
+                <img id="sliceImage">
+                <!-- volume -->
+                <div class="volume">
+                    <p class="volumeControl">90%</p>
+                        <i class="fa fa-volume-up volume-icon" aria-hidden="true" onclick="muteSound()"></i>
+                        <input type="range" min="0" max="100" value="90" onchange="volumeChange()" id="volume">
+                    </div>
+               
             </div>
+
+            <!-- (((((( right-section )))))) -->
+            <div class="right-section">
+                <!-- right-top -->
+                <h2 id="songName">song name</h2>
+                <h3 id="singerName">singer</h3>
+            </div>
+            <!-- right-middle -->
+            <div class="mainPlayButton">
+                <button onclick="backward()" id="pre"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <button onclick="play()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                <button onclick="forward()" id="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+            <!-- right-bottom -->
+            <div class="duration">
+                <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="durationChange()">
+            </div>
+            <button id="auto" onclick="autoPlay()">Auto play <i class="fa fa-circle-o-notch"
+                    aria-hidden="true"></i></button>
         </div>
 
-        <!-- (((((( right-section )))))) -->
-        <div class="right-section">
-            <!-- right-top -->
-            <p class="songName">song name</p>
-            <p class="singer">singer</p>
-        </div>
-        <!-- right-middle -->
-        <div class="mainPlayButton">
-            <button onclick="backward()" id="pre"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-            <button onclick="play()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
-            <button onclick="forward()" id="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-        </div>
-        <!-- right-bottom -->
-        <div class="duration">
-            <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="durationChange()">
-        </div>
-        <button id="auto" onclick="autoPlay()">Auto play <i class="fa fa-circle-o-notch"
-                aria-hidden="true"></i></button>
     </div>
-
 </body>
 
 </html>
