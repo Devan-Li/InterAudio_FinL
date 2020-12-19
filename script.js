@@ -33,7 +33,7 @@ let song = [
       singer: "Bt"
     },
     {
-      name: "papilo",
+      name: "Papilo",
       path: "music/s3.mp3",
       img: "imgages/img03.jpg",
       singer: "G-O"
@@ -85,3 +85,30 @@ function playsong() {
       songPlaying = false;
       play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
   }
+
+  //*backward & forward*//
+  function backward() {
+	if(loadTrack > 0){
+		loadTrack -= 1;
+		load_track(loadTrack);
+		playsong();
+    }
+    else {
+		loadTrack = song.length;
+		load_track(loadTrack);
+		playsong();
+	}
+}
+
+function forward() {
+	if(loadTrack < song.length - 1) {
+		loadTrack += 1;
+		load_track(loadTrack);
+		playsong();
+    }
+    else {
+		loadTrack = 0;
+		load_track(loadTrack);
+		playsong();
+	}
+}
