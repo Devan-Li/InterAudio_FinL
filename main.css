@@ -3,14 +3,15 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family:'Courier New', Courier, monospace
+	font-family:'Courier New', Courier, monospace;
 }
 body {
-	height: 100vh;
-	width: 100%;
     display: flex;
     align-items: center;
 	justify-content: center;
+	height: 100vh;
+	width: 100%;
+    
     
 }
 .main {
@@ -24,11 +25,17 @@ body {
     justify-content: center;
     
 }
+h2 {
+    font-size: 35px;
+}
+h3 {
+    font-size: 17px;
+}
 .musicContainer {
     display: flex;
 	align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 900px;
     height: 500px;
     background-color: rgb(238, 102, 4);
     border-radius: 15px;
@@ -49,6 +56,7 @@ input[type="range"] {
 	outline: none;
     height: 4px;
     border-radius: 10px;
+    
 }
 input[type="range"]::-webkit-slider-thumb{
     -webkit-appearance: none;
@@ -57,6 +65,7 @@ input[type="range"]::-webkit-slider-thumb{
     border-radius: 50%;
     background: #4b4a4a;
 }
+
 /* ********************** LEFT SECTION ********************** */
 .logo {
     position: absolute;
@@ -65,9 +74,10 @@ input[type="range"]::-webkit-slider-thumb{
     font-size: 60px;
     color: blanchedalmond;
 }
+
 .left-section img {
 	height: 250px;
-	width: 70%;
+	width: 350px;
 	border-radius: 15px;
 	box-shadow: 10px 13px 0px 4px; color: rgb(248, 231, 182);
 }
@@ -80,12 +90,74 @@ input[type="range"]::-webkit-slider-thumb{
 	color: white;
 }
 .volume i {
+    color: rgb(70, 68, 62);
 	cursor: pointer;
     padding: 10px 10px;
-
+    font-size: 20px;
 }
-.volume .volumeControl {
+.volume i:hover {
+    color: blanchedalmond;
+}
+.volumeControl {
 	margin-right: 10px;
     background: rgba(248, 231, 182,0.1);
-    padding: 10px 10px;
+    padding: 8px 8px;
+}
+
+/* ********************** RIGHT SECTION ********************** */
+.right-section {
+    margin:0 50px;
+}
+.mainPlayButton {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.mainPlayButton i {
+    font-size: 15px;
+    color: white;
+}
+
+#songName {
+    padding-bottom: 20px;
+	color: #fff;
+	font-size: 35px;
+}
+#singerName{
+    padding-bottom: 20px;
+	color: #fff;
+	font-size: 20px;
+}
+
+.mainPlayButton button {
+    margin: 52px 10px;
+    cursor: pointer;
+	border: none;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;	
+	outline: none;
+	transition: 0.3s;
+	background: rgba(248, 231, 182,0.1);
+}
+.mainPlayButton button:hover {
+    background: #4b4a4a;
+}
+.duration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auto {
+    padding: 6px 12px;
+	margin-top: 45px;
+	border: none;
+	color: white;
+	background: rgba(248, 231, 182,0.1);
+	outline: none;
+	border-radius: 2px;
+}
+.auto:hover {
+    background: #4b4a4a;
 }
