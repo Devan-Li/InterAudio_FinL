@@ -112,3 +112,9 @@ function forward() {
 		playsong();
 	}
 }
+
+  //*duration*//
+function durationChange() {
+	sliderPosition = track.duration * (slider.value / 100);
+	track.currentTime = sliderPosition;
+}
