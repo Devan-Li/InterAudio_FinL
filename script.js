@@ -12,7 +12,6 @@ let present = document.querySelector('#present');
 let total = document.querySelector('#total');
 let singerName = document.querySelector('#singerName');
 
-
 let timer;
 let autoplay = 0;
 let loadTrack = 0;
@@ -53,9 +52,8 @@ let song = [
     }
  ];
 
-function load_track(loadTrack){
-
-	track.src = song[loadTrack].path;
+function load_track(loadTrack) {
+    track.src = song[loadTrack].path;
 	songName.innerHTML = song[loadTrack].name;	
 	sliceImage.src = song[loadTrack].img;
     singerName.innerHTML = song[loadTrack].singer;
@@ -63,3 +61,27 @@ function load_track(loadTrack){
 }
 
 load_track(loadTrack);
+
+//right-middle_play section function
+function justplay() {
+    if(songPlaying == false) {
+        playsong();
+    }
+    else {
+        pausesong();
+    }
+}
+
+//*play & pause*//
+
+function playsong() {
+    track.play();
+    songPlaying = true;
+    play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+  }
+  
+  function pausesong() {
+      track.pause();
+      songPlaying = false;
+      play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+  }
