@@ -35,19 +35,19 @@ let song = [
     {
       name: "Papilo",
       path: "music/s3.mp3",
-      img: "imgages/img03.jpg",
+      img: "images/img03.jpg",
       singer: "G-O"
     },
     {
       name: "Phoxi",
       path: "music/s4.mp3",
-      img: "image/img04.jpg",
+      img: "images/img04.jpg",
       singer: "XS"
     },
     {
       name: "Bing-Bian",
       path: "music/s5.mp3",
-      img: "img/img05.jpg",
+      img: "images/img05.jpg",
       singer: "L-tit"
     }
  ];
@@ -117,4 +117,17 @@ function forward() {
 function durationChange() {
 	sliderPosition = track.duration * (slider.value / 100);
 	track.currentTime = sliderPosition;
+}
+
+ //*volume*//
+ function volumeChange(){
+	volumeControl.innerHTML = volume.value;
+	track.volume = volume.value / 100;
+}
+
+ //*Mute*//
+function muteSound() {
+	track.volume = 0;
+	volume.value = 0;
+    volumeControl.innerHTML = 0;
 }
