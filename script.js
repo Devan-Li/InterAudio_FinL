@@ -58,6 +58,10 @@ function load_track(loadTrack) {
 	sliceImage.src = song[loadTrack].img;
     singerName.innerHTML = song[loadTrack].singer;
     track.load();
+
+    total.innnerHTML = song.length;
+    present.innerHTML = loadTrack + 1;
+    timer = setInterval(SilderRange, 1000);
 }
 
 load_track(loadTrack);
@@ -119,8 +123,10 @@ function durationChange() {
 	track.currentTime = sliderPosition;
 }
 
+
+        
  //*volume*//
- function volumeChange(){
+function volumeChange() {
 	volumeControl.innerHTML = volume.value;
 	track.volume = volume.value / 100;
 }
@@ -131,3 +137,25 @@ function muteSound() {
 	volume.value = 0;
     volumeControl.innerHTML = 0;
 }
+
+
+function SilderRange(){
+	let position = 0;
+        
+        // update slider position
+		if(!isNaN(track.duration)){
+		   position = track.currentTime * (100 / track.duration);
+		   slider.value =  position;
+	      }
+
+       
+       // function will run when the song is over
+       if(track.ended){
+       	 play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+           if(autoplay==1){
+		       loadTrack += 1;
+		       load_track(loadTrack);
+		       playsong();
+           }
+	    }
+     }

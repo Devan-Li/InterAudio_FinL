@@ -26,7 +26,8 @@
                 <img id="sliceImage">
                 <!-- volume -->
                 <div class="volume">
-                    <h3 id="volumeControl">90%</h3>
+                    <h3 id="volumeControl">39</h3>
+                    
                         <i class="fa fa-volume-up volume-icon" aria-hidden="true" onclick="muteSound()" id="volumeIcon"></i>
                         <input type="range" min="0" max="100" value="90" onchange="volumeChange()" id="volume">
                     </div>
@@ -49,7 +50,11 @@
             <div class="duration">
                 <input type="range" min="0" max="100" value="0" id="durationSlider" onchange="durationChange()">
             </div>
-            <button class="auto" onclick="autoPlay()"> <h3>Auto play</h3> </button>
+            <!-- <button class="auto" onclick="autoPlay()"> <h3>Auto play</h3> </button> -->
+            <div class="recording">
+            <a id="start" disabled><i class="fa fa-microphone" aria-hidden="true"></i><h4> Start Recording</h4></a>
+            <a id="stop" disabled><i class="fa fa-microphone-slash" aria-hidden="true"></i><h4>Stop Recording</h4></a>
+        </div>
         </div>
     </div>
     </div>
