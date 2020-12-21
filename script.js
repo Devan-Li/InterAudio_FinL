@@ -8,14 +8,13 @@ let slider = document.querySelector('#durationSlider');
 let duration = document.querySelector('#duration');
 let sliceImage = document.querySelector('#sliceImage');
 let autoPlay = document.querySelector('#auto');
-let present = document.querySelector('#present');
-let total = document.querySelector('#total');
 let singerName = document.querySelector('#singerName');
-let startBtn = document.getElementById(`start`)
-let stopBtn = document.getElementById(`stop`)
+let startBtn = document.getElementById('start')
+let stopBtn = document.getElementById('stop')
 
 let timer;
 let autoplay = 0;
+
 let loadTrack = 0;
 let songPlaying = false;
 
@@ -55,29 +54,32 @@ let song = [
 ];
 
 function load_track(loadTrack) {
+  reset_slider();
   track.src = song[loadTrack].path;
   songName.innerHTML = song[loadTrack].name;
   sliceImage.src = song[loadTrack].img;
   singerName.innerHTML = song[loadTrack].singer;
   track.load();
 
-  // total.innnerHTML = song.length;
-  // present.innerHTML = loadTrack + 1;
-  // timer = setInterval(SilderRange, 1000);
+  timer = setInterval(SilderRange, 1000);
 }
+
 // ***** Microphone Loading ***** //
 let loadMicrophone = async function () {
   let audioChunks = []
   recordingNow(false)
-  let stream = await navigator.mediaDevices.getUserMedia({ audio: true })
 
+  //Get the microphone ready
+  let stream = await navigator.mediaDevices.getUserMedia({ audio: true })
   let mediaRecorder = new MediaRecorder(stream)
 
+  // When the stream STOPS recording
   mediaRecorder.addEventListener("stop", function (event) {
     let audioBlob = new Blob(audioChunks)
     let audioUrl = URL.createObjectURL(audioBlob)
+    let audio = new Audio(audioUrl)
     audio.play()
-
+    renderFrame();
     recordingNow(false)
   })
 
@@ -85,13 +87,13 @@ let loadMicrophone = async function () {
     audioChunks.push(event.data)
   })
 
-  //start recording
-  startBtn.addEventListener(`click`, function (event) {
+  //Sstart recording
+  startBtn.addEventListener('click', function (event) {
     mediaRecorder.start()
   })
 
-  //stop recording
-  stopBtn.addEventListener(`click`, function (event) {
+  //Stop recording
+  stopBtn.addEventListener('click', function (event) {
     mediaRecorder.stop()
   })
 }
@@ -101,13 +103,15 @@ let recordingNow = function (isRecording) {
   stopBtn.disabled = !isRecording
 
   if (isRecording) {
-    document.body.classList.add(`recording`)
+    document.body.classList.add('recording')
   } else {
-    document.body.classList.remove(`recording`)
+    document.body.classList.remove('recording')
   }
 }
 
-window.addEventListener(`load`, loadMicrophone)
+//Microphone ready
+window.addEventListener('load', loadMicrophone)
+
 load_track(loadTrack);
 
 //right-middle_play section function
@@ -118,6 +122,11 @@ function justplay() {
   else {
     pausesong();
   }
+}
+
+// reset song slider
+function reset_slider() {
+  slider.value = 0;
 }
 
 //*play & pause*//
@@ -140,6 +149,7 @@ function backward() {
     load_track(loadTrack);
     playsong();
   }
+
   else {
     loadTrack = song.length;
     load_track(loadTrack);
@@ -164,6 +174,15 @@ function forward() {
 function durationChange() {
   sliderPosition = track.duration * (slider.value / 100);
   track.currentTime = sliderPosition;
+}
+//*duration moving*//
+function SilderRange() {
+  let position = 0;
+
+  if (!isNaN(track.duration)) {
+    position = track.currentTime * (100 / track.duration);
+    slider.value = position;
+  }
 }
 
 //*volume*//

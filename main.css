@@ -12,8 +12,6 @@ body {
 	justify-content: center;
 	height: 100vh;
 	width: 100%;
-    
-    
 }
 .main {
 	position: relative;
@@ -24,7 +22,6 @@ body {
     display: flex;
 	align-items: center;
     justify-content: center;
-    
 }
 h2 {
     font-size: 35px;
@@ -59,8 +56,7 @@ input[type="range"] {
 	width: 70%;
 	outline: none;
     height: 4px;
-    border-radius: 10px;
-    
+    border-radius: 10px;  
 }
 input[type="range"]::-webkit-slider-thumb{
     -webkit-appearance: none;
@@ -69,7 +65,6 @@ input[type="range"]::-webkit-slider-thumb{
     border-radius: 50%;
     background: #4b4a4a;
 }
-
 /* ********************** LEFT SECTION ********************** */
 .logo {
     position: absolute;
@@ -78,14 +73,12 @@ input[type="range"]::-webkit-slider-thumb{
     font-size: 60px;
     color: blanchedalmond;
 }
-
 .left-section img {
 	height: 250px;
 	width: 350px;
 	border-radius: 15px;
 	box-shadow: 10px 13px 0px 4px; color: rgb(248, 231, 182);
 }
-
 .left-section .volume {
     padding-top: 50px;
 	display: flex;
@@ -121,7 +114,6 @@ input[type="range"]::-webkit-slider-thumb{
     font-size: 15px;
     color: white;
 }
-
 #songName {
     padding-bottom: 20px;
 	color: #fff;
@@ -132,7 +124,6 @@ input[type="range"]::-webkit-slider-thumb{
 	color: #fff;
 	font-size: 20px;
 }
-
 .mainPlayButton button {
     margin: 35px 10px;
     cursor: pointer;
@@ -152,18 +143,14 @@ input[type="range"]::-webkit-slider-thumb{
     align-items: center;
     justify-content: center;
 }
-
 .recording {
-  
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-top: 45px;
 	border: 1px;
     color: white;
-  
 }
-
 .recording > a {
     margin: 12px 12px;
     padding: 12px 12px;
